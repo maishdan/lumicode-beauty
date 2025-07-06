@@ -92,3 +92,50 @@ body.dark-mode nav a {
 body.dark-mode footer {
   color: #aaa;
 }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f8f8f8;
+  color: #333;
+}
+
+header {
+  background-color: #111;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.hero {
+  background-color: #ffc0cb;
+  padding: 50px;
+  text-align: center;
+}
+
+.hero .btn {
+  padding: 10px 20px;
+  background: #111;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.newsletter {
+  background: #fff;
+  padding: 30px;
+  text-align: center;
+}
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
