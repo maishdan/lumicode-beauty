@@ -1,30 +1,64 @@
-/* Reset */
+/* ===================== RESET ===================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
-  background: #fff;
-  color: #333;
-  padding: 20px;
-  transition: background 0.3s, color 0.3s;
+html {
+  scroll-behavior: smooth;
 }
 
+body {
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  background: url('/images/lumicode-bg.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
+  padding: 20px;
+}
+
+body.dark-mode {
+  background: url('/images/lumicode-bg.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #eee;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5); /* semi-transparent black */
+  padding: 20px;
+  border-radius: 12px;
+}
+
+/* ===================== HEADER ===================== */
 header {
+  background-color: #111;
+  color: white;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 40px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+body.dark-mode header {
+  background-color: #1e1e1e;
 }
 
 nav a {
   margin: 0 10px;
   text-decoration: none;
-  color: #333;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff80ab;
 }
 
 nav button {
@@ -32,13 +66,120 @@ nav button {
   border: none;
   font-size: 1.2em;
   cursor: pointer;
+  color: #ff4081;
+  transition: transform 0.2s ease;
 }
 
+nav button:hover {
+  transform: scale(1.1);
+}
+
+/* ===================== HERO ===================== */
 .hero {
+  background-color: #ffc0cb;
+  background-image: url('https://images.unsplash.com/photo-1556228720-195a672e3235');
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
   text-align: center;
-  margin-bottom: 40px;
+  color: white;
+  position: relative;
 }
 
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.hero * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 12px #ff4081;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero .btn {
+  padding: 12px 24px;
+  background: #ff4081;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  box-shadow: 0 0 10px #ff80ab;
+  animation: pulse 2s infinite;
+  transition: background 0.3s;
+}
+
+.hero .btn:hover {
+  background: #c2185b;
+}
+
+/* ===================== NEWSLETTER ===================== */
+.newsletter {
+  background: #fff;
+  padding: 40px 20px;
+  margin: 40px auto;
+  max-width: 800px;
+  border-radius: 1rem;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .newsletter {
+  background: #2c2c2c;
+  color: #eee;
+}
+
+.newsletter input {
+  padding: 10px;
+  width: 60%;
+  max-width: 300px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+}
+
+.newsletter button {
+  padding: 10px 20px;
+  background: #e91e63;
+  color: white;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter button:hover {
+  background: #c2185b;
+}
+
+/* ===================== FOOTER ===================== */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9em;
+  margin-top: 60px;
+}
+
+body.dark-mode footer {
+  color: #aaa;
+  background: #000;
+}
+
+/* ===================== BUTTONS ===================== */
 .btn {
   display: inline-block;
   margin-top: 10px;
@@ -49,93 +190,33 @@ nav button {
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
+  transition: background 0.3s ease;
 }
 
-.newsletter {
-  text-align: center;
-  margin-top: 40px;
+.btn:hover {
+  background-color: #c2185b;
 }
 
-.newsletter input {
-  padding: 10px;
-  width: 60%;
-  margin-right: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* ===================== ANIMATIONS ===================== */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
-.newsletter button {
-  padding: 10px 20px;
-  background: #e91e63;
-  color: white;
-  border: none;
-  border-radius: 5px;
-}
-
-footer {
-  text-align: center;
-  margin-top: 60px;
-  font-size: 0.9em;
-  color: #777;
-}
-
-/* Dark Mode */
-body.dark-mode {
-  background: #111;
-  color: #eee;
-}
-
-body.dark-mode nav a {
-  color: #eee;
-}
-
-body.dark-mode footer {
-  color: #aaa;
-}
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #f8f8f8;
-  color: #333;
-}
-
-header {
-  background-color: #111;
-  color: white;
-  padding: 1rem;
-  text-align: center;
-}
-
-nav a {
-  margin: 0 10px;
-  color: white;
-  text-decoration: none;
-}
-
-.hero {
-  background-color: #ffc0cb;
-  padding: 50px;
-  text-align: center;
-}
-
-.hero .btn {
-  padding: 10px 20px;
-  background: #111;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-.newsletter {
-  background: #fff;
-  padding: 30px;
-  text-align: center;
-}
-
-footer {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 10px;
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  nav a {
+    margin: 0 5px;
+  }
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .newsletter input {
+    width: 100%;
+    margin: 0 0 1rem 0;
+  }
+  .newsletter button {
+    width: 100%;
+  }
 }

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LumiCode Checkout</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>LumiCode Beauty</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="cart.html">Cart 🛒</a>
+      <button class="theme-toggle" id="themeToggle">🌓</button>
+    </nav>
+  </header>
+
+  <main class="checkout-container">
+    <section class="checkout-header">
+      <h2>Select Your Preferred Payment Method</h2>
+      <div class="progress-bar">
+        <div class="step active">Cart</div>
+        <div class="step active">Shipping</div>
+        <div class="step active">Payment</div>
+        <div class="step">Done</div>
+      </div>
+    </section>
+
+    <section class="checkout-methods">
+      <div class="payment-card">
+        <h3>📲 M-Pesa</h3>
+        <p>Pay with your Safaricom M-Pesa mobile wallet</p>
+        <a href="mpesa-payment.html" class="btn glow">Pay with M-Pesa</a>
+      </div>
+      <div class="payment-card">
+        <h3>🧾 PayPal</h3>
+        <p>Use your PayPal account for a secure transaction</p>
+        <a href="paypal-payment.html" class="btn glow">Pay with PayPal</a>
+      </div>
+      <div class="payment-card">
+        <h3>💳 Credit/Debit Card</h3>
+        <p>Use Stripe to pay with Visa, MasterCard, AmEx</p>
+        <a href="stripe-payment.html" class="btn glow">Pay with Card</a>
+      </div>
+    </section>
+
+    <section class="checkout-security">
+      <h4>🔒 Secure Payment Guaranteed</h4>
+      <ul>
+        <li>🔐 SSL Encrypted Checkout</li>
+        <li>✔️ Verified by Visa, Mastercard SecureCode</li>
+        <li>📱 2FA Authentication Support</li>
+        <li>🛡️ Fraud Detection & Protection</li>
+      </ul>
+    </section>
+
+    <section class="checkout-summary">
+      <h3>🧾 Order Summary</h3>
+      <div id="checkout-summary-content">
+        <!-- JavaScript will populate items here -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 LumiCode Beauty. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('themeToggle');
+    toggle?.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌓';
+    });
+  </script>
+</body>
+</html>

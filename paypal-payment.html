@@ -1,0 +1,53 @@
+<!-- paypal-payment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PayPal Checkout - LumiCode</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .paypal-container {
+      max-width: 600px;
+      margin: 5vh auto;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid #fff2;
+      color: white;
+    }
+    .paypal-container h2 { text-align: center; }
+    .paypal-btn {
+      background-color: #003087;
+      padding: 12px;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+      border-radius: 10px;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .paypal-btn:hover {
+      background-color: #0070ba;
+    }
+  </style>
+</head>
+<body class="dark-mode">
+  <div class="paypal-container">
+    <h2>Pay with PayPal</h2>
+    <p>Email Address:</p>
+    <input type="email" placeholder="you@example.com" style="width: 100%; padding: 10px; border-radius: 8px;">
+    <p>Password:</p>
+    <input type="password" placeholder="••••••••" style="width: 100%; padding: 10px; border-radius: 8px;">
+    <button class="paypal-btn" onclick="proceedToReceipt()">Pay $64.99</button>
+  </div>
+  <script>
+    function proceedToReceipt() {
+      window.location.href = 'receipt.html';
+    }
+  </script>
+</body>
+</html>
+    

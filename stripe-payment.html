@@ -1,0 +1,58 @@
+<!-- stripe-payment.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stripe Checkout - LumiCode</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .stripe-container {
+      max-width: 600px;
+      margin: 5vh auto;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 20px;
+      border: 1px solid #fff2;
+      color: white;
+    }
+    .stripe-container h2 { text-align: center; }
+    .stripe-input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      margin: 0.5rem 0;
+    }
+    .stripe-btn {
+      background-color: #635bff;
+      padding: 12px;
+      width: 100%;
+      font-weight: bold;
+      color: #fff;
+      border-radius: 10px;
+      margin-top: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .stripe-btn:hover {
+      background-color: #7a70ff;
+    }
+  </style>
+</head>
+<body class="dark-mode">
+  <div class="stripe-container">
+    <h2>Pay with Stripe</h2>
+    <input class="stripe-input" placeholder="Card Number">
+    <input class="stripe-input" placeholder="MM / YY">
+    <input class="stripe-input" placeholder="CVC">
+    <input class="stripe-input" placeholder="Name on Card">
+    <button class="stripe-btn" onclick="proceedToReceipt()">Pay $64.99</button>
+  </div>
+  <script>
+    function proceedToReceipt() {
+      window.location.href = 'receipt.html';
+    }
+  </script>
+</body>
+</html>

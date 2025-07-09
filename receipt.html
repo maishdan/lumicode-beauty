@@ -1,0 +1,43 @@
+<!-- receipt.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Receipt - LumiCode</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .receipt-container {
+      max-width: 600px;
+      margin: 5vh auto;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      padding: 2rem;
+      color: #fff;
+      text-align: center;
+    }
+    .receipt-container h2 {
+      color: #90ee90;
+    }
+    .receipt-container .success-icon {
+      font-size: 4rem;
+      color: #90ee90;
+      animation: pop 0.6s ease-out forwards;
+    }
+    @keyframes pop {
+      from { transform: scale(0); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+  </style>
+</head>
+<body class="dark-mode">
+  <div class="receipt-container">
+    <div class="success-icon">✅</div>
+    <h2>Payment Successful!</h2>
+    <p>Thank you for shopping with LumiCode Beauty. An email receipt has been sent to you.</p>
+    <p><strong>Order ID:</strong> LC-<script>document.write(Math.floor(Math.random()*100000));</script></p>
+    <a href="index.html" style="color:#ff80ab;text-decoration:underline;margin-top:20px;display:inline-block">Return Home</a>
+  </div>
+</body>
+</html>
